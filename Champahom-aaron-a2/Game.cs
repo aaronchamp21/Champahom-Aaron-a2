@@ -10,6 +10,9 @@ namespace MohawkGame2D
     /// </summary>
     public class Game
     {
+        // Pupil movement
+        int pupilX = 0;
+        int pupilY = 0;
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
@@ -30,7 +33,7 @@ namespace MohawkGame2D
             Draw.SetFillColor(252, 140, 3);
             Draw.SetLineColor(0, 0, 0);
             Draw.SetLineSize(10);
-            Draw.Rectangle(70, 80,260,240);
+            Draw.Rectangle(70, 80, 260, 240);
             //B eye 
             Draw.SetFillColor(252, 140, 3);
             Draw.SetLineColor(0, 0, 0);
@@ -64,17 +67,38 @@ namespace MohawkGame2D
             Draw.Triangle(75, 90, 130, 20, 175, 90);
             // G ear right
             Draw.Triangle(225, 90, 280, 20, 325, 90);
-            //  left pupil
+            // 
             Draw.SetFillColor(0, 0, 0);
-            Draw.Circle(150, 145, 10);
 
-            // right pupil
-            Draw.Circle(250, 145, 10);
+            // H Pupils
+            Draw.SetFillColor(0, 0, 0);
 
+            Draw.Circle(150 + pupilX, 145 + pupilY, 10);
+            Draw.Circle(250 + pupilX, 145 + pupilY, 10);
+            {
+                // Move pupils with arrow keys
+                if (Input.IsKeyboardKeyDown(KeyboardKey.Left))
+                    pupilX -= 2;
+
+                if (Input.IsKeyboardKeyDown(KeyboardKey.Right))
+                    pupilX += 2;
+
+                if (Input.IsKeyboardKeyDown(KeyboardKey.Up))
+                    pupilY -= 2;
+
+                if (Input.IsKeyboardKeyDown(KeyboardKey.Down))
+                    pupilY += 2;
+
+                // Keep pupils from moving too far
+                pupilX = Math.Clamp(pupilX, -12, 12);
+                pupilY = Math.Clamp(pupilY, -12, 12);
+            }
+
+            }
         }
-
-
-
     }
 
-}
+
+
+        
+    
