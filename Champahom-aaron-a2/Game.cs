@@ -28,8 +28,8 @@ namespace GAME_10033_Game_Development_Foundations___2D_Game_Template__v1._6_1
         /// </summary>
         public void Update()
         {
-            // Clear background to offwhite color
-            Window.ClearBackground(240);
+            // Blue background
+            Window.ClearBackground(66, 135, 245);
             //A head
             Draw.SetFillColor(252, 140, 3);
             Draw.SetLineColor(0, 0, 0);
