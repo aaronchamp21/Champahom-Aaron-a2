@@ -5,6 +5,7 @@
 /* Source: https://github.com/MohawkRaphaelT/game10003-2d-game-template
 /*////////////////////////////////////////////////////////////////////////
 
+using GAME_10033_Game_Development_Foundations___2D_Game_Template__v1._6_1;
 using MohawkGame2D;
 using Raylib_cs;
 using System.Numerics;

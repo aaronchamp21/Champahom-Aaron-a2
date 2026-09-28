@@ -1,9 +1,10 @@
 ﻿// Include the namespaces (code libraries) you need below.
+using MohawkGame2D;
 using System;
 using System.Numerics;
 
 // The namespace your code is in.
-namespace MohawkGame2D
+namespace GAME_10033_Game_Development_Foundations___2D_Game_Template__v1._6_1
 {
     /// <summary>
     ///     Your game code goes inside this class!
@@ -54,23 +55,20 @@ namespace MohawkGame2D
             Draw.SetLineColor(0, 0, 0);
             Draw.SetLineSize(10);
 
-            // Left side of mouth
+            // F Left side of mouth
             Draw.Line(200, 250, 200, 260);
             Draw.Line(200, 260, 185, 275);
             Draw.Line(185, 275, 170, 275);
 
-            // Right side of mouth
+            // G Right side of mouth
             Draw.Line(200, 260, 215, 275);
             Draw.Line(215, 275, 230, 275);
-            // F ear left
+            // H ear left
             Draw.SetFillColor(252, 140, 3);
             Draw.Triangle(75, 90, 130, 20, 175, 90);
-            // G ear right
+            // I ear right
             Draw.Triangle(225, 90, 280, 20, 325, 90);
-            // 
-            Draw.SetFillColor(0, 0, 0);
-
-            // H Pupils
+            // J Pupils
             Draw.SetFillColor(0, 0, 0);
 
             Draw.Circle(150 + pupilX, 145 + pupilY, 10);
@@ -79,24 +77,22 @@ namespace MohawkGame2D
                 // Move pupils with arrow keys
                 if (Input.IsKeyboardKeyDown(KeyboardKey.Left))
                     pupilX -= 2;
-
                 if (Input.IsKeyboardKeyDown(KeyboardKey.Right))
                     pupilX += 2;
-
                 if (Input.IsKeyboardKeyDown(KeyboardKey.Up))
                     pupilY -= 2;
-
                 if (Input.IsKeyboardKeyDown(KeyboardKey.Down))
                     pupilY += 2;
-
-                // Keep pupils from moving too far
+                //keep pupils from moving too far
                 pupilX = Math.Clamp(pupilX, -12, 12);
                 pupilY = Math.Clamp(pupilY, -12, 12);
-            }
-
+            
             }
         }
-    }
+    
+            }
+        }
+    
 
 
 
